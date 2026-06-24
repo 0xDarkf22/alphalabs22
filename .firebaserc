@@ -1,5 +1,25 @@
 {
   "projects": {
-    "default": "alphalabs22-eace7"
+    "default": "alphalabs-22"
+  }
+}
+EOF
+
+# Create firebase.json
+cat > firebase.json << 'EOF'
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/404.html"
+      }
+    ]
   }
 }
